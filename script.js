@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     contactBtn.addEventListener('click', () => {
       showBubbleAlert(
         'Thank you for reaching out!',
-        'You can email me directly at mark.lampano@student.example.com — Contact form coming soon!'
+        'You can email me directly at mlampano_260000000974@uic.edu.ph — Contact form coming soon!'
       );
     });
   }
