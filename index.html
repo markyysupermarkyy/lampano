@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lampano E-Portfolio</title>
+  <meta name="description" content="E-Portfolio of Mark Allen T. Lampano - 1st Year Information Technology Student with skills in Core ICT, Computer Operations, PC Troubleshooting, and Basic Programming.">
+  <title>Mark Allen T. Lampano | IT Student E-Portfolio</title>
 
   <!-- Connection 1: External CSS Link -->
   <link rel="stylesheet" href="style.css">
@@ -13,39 +14,368 @@
 </head>
 <body>
 
-  <header>
-    <nav>
-      <h2>Mark Allen T. Lampano E-Portfolio</h2>
-      <!-- Dynamic Target 1: Dark Mode Toggle -->
-      <button id="theme-btn">Toggle Dark Mode</button>
-    </nav>
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- =========================================================
+       HEADER & NAVIGATION
+       ========================================================= -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#hero" class="brand-title">
+        <span class="brand-badge">ML</span>
+        <span class="brand-name">Mark Allen T. Lampano</span>
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="nav-links">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <nav class="nav-container">
+        <ul id="nav-links" class="nav-links">
+          <li><a href="#hero" class="nav-item active">Home</a></li>
+          <li><a href="#about" class="nav-item">About</a></li>
+          <li><a href="#skills" class="nav-item">Skills</a></li>
+          <li><a href="#projects" class="nav-item">Projects</a></li>
+          <li><a href="#education" class="nav-item">Education</a></li>
+          <li><a href="#contact" class="nav-item">Contact</a></li>
+        </ul>
+
+        <!-- Dynamic Target 1: Dark Mode Toggle -->
+        <button id="theme-btn" class="theme-toggle-btn" aria-label="Toggle dark mode theme">
+          <span class="theme-icon" aria-hidden="true">&#9790;</span>
+          <span class="theme-label">Dark Mode</span>
+        </button>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section id="hero">
-      <h1>Welcome to My E-Portfolio</h1>
-      <p>1st Year Information Technology Student</p>
-    </section>
+  <!-- =========================================================
+       MAIN CONTENT
+       ========================================================= -->
+  <main id="main-content">
 
-    <section id="projects">
-      <h2>Featured Projects</h2>
-      <div class="card">
-        <h3>Web Integration Lab</h3>
-        <p>A demonstration of linking HTML, CSS, and JS.</p>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="badge-tag yellow-tag">Freshman Portfolio</span>
+          <span class="badge-tag blue-tag">BS Information Technology</span>
+        </div>
+
+        <h1 class="hero-title">Welcome to My E-Portfolio</h1>
+        <p class="hero-subtitle">1st Year Information Technology Student</p>
+
+        <p class="hero-bio">
+          Hello! I am <strong>Mark Allen T. Lampano</strong>. I have foundational skills in basic programming (HTML, CSS, JavaScript, and Java) and a strong focus on technical computer operations, PC hardware assembly, operating systems, and core ICT troubleshooting. Additionally, as an artistic and creative individual, I am exploring the world of web design and development and bringing artistry to the Information Technology field.
+        </p>
+
+        <div class="hero-btn-group">
+          <a href="#projects" class="btn btn-primary">Featured Projects</a>
+          <!-- Dynamic Target 2: Interactive Contact Button -->
+          <button id="contact-btn" class="btn btn-secondary">Get in Touch</button>
+          <a href="#skills" class="btn btn-outline">My Skills</a>
+        </div>
       </div>
     </section>
 
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="content-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <h2 class="section-title">About Me</h2>
+          <div class="accent-bar"></div>
+        </div>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <!-- Dynamic Target 2: Interactive Alert Button -->
-      <button id="contact-btn">Get in Touch</button>
+        <div class="about-card">
+          <div class="about-text">
+            <p>
+              I am a first-year college student taking up the <strong>Bachelor of Science in Information Technology (BSIT)</strong> program. I am passionate about learning how computers work from both the inside (hardware &amp; systems) and the outside (software &amp; web applications).
+            </p>
+            <p>
+              While I am currently learning introductory programming in <strong>HTML, CSS, JavaScript, and Java</strong>, my strongest interest and hands-on experience lie in <strong>Core ICT and Technical Computer Operations</strong>.
+            </p>
+            <p>
+              My goal as an IT student is to continuously develop my technical problem-solving capabilities, gain practical laboratory experience, and build a solid foundation for a career in IT support, systems administration, and software development.
+            </p>
+          </div>
+
+          <div class="quick-info-box">
+            <h3 class="quick-info-title">Student Profile</h3>
+            <ul class="info-list">
+              <li><strong>Name:</strong> Mark Allen T. Lampano</li>
+              <li><strong>Program:</strong> BS in Information Technology (1st Year)</li>
+              <li><strong>School:</strong> University of the Immaculate Conception</li>
+              <li><strong>Key Strengths:</strong> PC Assembly, OS Setup, ICT Support, Basic Coding</li>
+              <li><strong>Status:</strong> Active Student &bull; Open for Hands-on Labs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <!-- TECHNICAL SKILLS SECTION (Highlighting Core ICT & Basic Programming) -->
+    <section id="skills" class="content-section bg-alt">
+      <div class="container">
+        <div class="section-title-wrap">
+          <h2 class="section-title">Technical Skills</h2>
+          <div class="accent-bar"></div>
+          <p class="section-desc">Practical skills in core computer operations alongside introductory programming.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Skill Card 1: Core ICT & Computer Operations (Strongest skill) -->
+          <div class="skill-card highlight-card">
+            <div class="skill-header">
+              <span class="skill-icon" aria-hidden="true">&#9881;</span>
+              <h3>Core ICT &amp; Computer Operations</h3>
+            </div>
+            <p class="skill-desc">Hands-on skills in computer hardware assembly, maintenance, and operating system management.</p>
+            <ul class="tag-list">
+              <li class="tag tag-yellow">PC Hardware Assembly</li>
+              <li class="tag tag-yellow">BIOS / UEFI Setup</li>
+              <li class="tag tag-yellow">OS Installation (Windows &amp; Linux)</li>
+              <li class="tag tag-yellow">Hardware Diagnostics</li>
+              <li class="tag tag-yellow">Driver &amp; Software Setup</li>
+              <li class="tag tag-yellow">Storage Partitioning &amp; Formatting</li>
+            </ul>
+          </div>
+
+          <!-- Skill Card 2: Basic Programming & Web (Foundational) -->
+          <div class="skill-card">
+            <div class="skill-header">
+              <span class="skill-icon" aria-hidden="true">&#60;/&#62;</span>
+              <h3>Basic Programming &amp; Web</h3>
+            </div>
+            <p class="skill-desc">Beginner-level knowledge in web technologies and foundational programming logic.</p>
+            <ul class="tag-list">
+              <li class="tag tag-blue">HTML5 Basics</li>
+              <li class="tag tag-blue">CSS3 Styling &amp; Layouts</li>
+              <li class="tag tag-blue">Vanilla JavaScript (DOM &amp; Events)</li>
+              <li class="tag tag-blue">Java Programming Fundamentals</li>
+              <li class="tag tag-blue">Basic Algorithm Logic</li>
+              <li class="tag tag-blue">Simple Console Applications</li>
+            </ul>
+          </div>
+
+          <!-- Skill Card 3: Basic Networking -->
+          <div class="skill-card">
+            <div class="skill-header">
+              <span class="skill-icon" aria-hidden="true">&#128421;</span>
+              <h3>Networking Essentials</h3>
+            </div>
+            <p class="skill-desc">Understanding fundamental networking concepts, cabling, and basic connectivity.</p>
+            <ul class="tag-list">
+              <li class="tag tag-blue">LAN Cable Crimping (RJ45 / UTP)</li>
+              <li class="tag tag-blue">Basic IP Addressing (IPv4)</li>
+              <li class="tag tag-blue">Router &amp; Wi-Fi Setup</li>
+              <li class="tag tag-blue">Switch &amp; Hub Connections</li>
+              <li class="tag tag-blue">Network Sharing &amp; Permissions</li>
+            </ul>
+          </div>
+
+          <!-- Skill Card 4: ICT Tools & Productivity -->
+          <div class="skill-card">
+            <div class="skill-header">
+              <span class="skill-icon" aria-hidden="true">&#128196;</span>
+              <h3>Productivity &amp; Tools</h3>
+            </div>
+            <p class="skill-desc">Standard software utilities and digital tools for academic and technical work.</p>
+            <ul class="tag-list">
+              <li class="tag tag-blue">Microsoft Office / Word &amp; Excel</li>
+              <li class="tag tag-blue">Command Prompt (CMD) Basics</li>
+              <li class="tag tag-blue">VS Code Editor</li>
+              <li class="tag tag-blue">Technical Documentation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section id="projects" class="content-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <h2 class="section-title">Featured Projects</h2>
+          <div class="accent-bar"></div>
+          <p class="section-desc">Practical academic exercises and introductory lab projects completed in 1st year.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Web Integration Lab (Preserved from starter code) -->
+          <article class="project-box">
+            <div class="project-badge yellow-badge">Web Basics</div>
+            <h3 class="project-name">Web Integration Lab</h3>
+            <p class="project-text">
+              A demonstration of linking HTML, CSS, and JS. Built as an introduction to structuring markup, styling with solid colors, and manipulating DOM elements dynamically with vanilla JavaScript.
+            </p>
+            <div class="project-tags">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+            </div>
+            <div class="project-footer">
+              <span class="project-note">Completed Lab &bull; Starter Project</span>
+            </div>
+          </article>
+
+          <!-- Project 2: PC Assembly & OS Deployment Lab -->
+          <article class="project-box">
+            <div class="project-badge blue-badge">Core ICT</div>
+            <h3 class="project-name">PC Assembly &amp; OS Installation</h3>
+            <p class="project-text">
+              Hands-on laboratory activity involving assembling hardware components (motherboard, CPU, RAM, storage, PSU), configuring BIOS/UEFI settings, and successfully installing a clean Windows/Linux OS.
+            </p>
+            <div class="project-tags">
+              <span>Hardware</span>
+              <span>UEFI / BIOS</span>
+              <span>OS Setup</span>
+            </div>
+            <div class="project-footer">
+              <span class="project-note">Hardware Laboratory Activity</span>
+            </div>
+          </article>
+
+          <!-- Project 3: Basic Java Console Program -->
+          <article class="project-box">
+            <div class="project-badge yellow-badge">Programming</div>
+            <h3 class="project-name">Java Machine Problem (Console)</h3>
+            <p class="project-text">
+              A beginner console program written in Java which contains of necessary logic and control structures, basic fundamentals of input/output using Scanner, and simple arithmetic operations to solve a problem statement.
+            </p>
+            <div class="project-tags">
+              <span>Java</span>
+              <span>Control Structures</span>
+              <span>Scanner Input</span>
+              <span>Fundamentals</span>
+              <span>Operations</span>
+            </div>
+            <div class="project-footer">
+              <span class="project-note">Computer Programming 11 Exercises Activity</span>
+            </div>
+          </article>
+
+          <!-- Project 4: Local Area Network (LAN) Setup Lab -->
+          <article class="project-box">
+            <div class="project-badge blue-badge">Networking</div>
+            <h3 class="project-name">LAN Cable Crimping &amp; Network Setup</h3>
+            <p class="project-text">
+              Crimped straight-through and crossover UTP cables using the T568B standard, tested continuity with a cable tester, and connected two workstations to share files across a local peer-to-peer network.
+            </p>
+            <div class="project-tags">
+              <span>UTP / RJ45</span>
+              <span>T568B Standard</span>
+              <span>Peer-to-Peer LAN</span>
+            </div>
+            <div class="project-footer">
+              <span class="project-note">Networking Hands-on Activity</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education" class="content-section bg-alt">
+      <div class="container">
+        <div class="section-title-wrap">
+          <h2 class="section-title">Education</h2>
+          <div class="accent-bar"></div>
+        </div>
+
+        <div class="education-card">
+          <div class="edu-top">
+            <span class="edu-level">College Undergraduate</span>
+            <span class="edu-year">2026 – Present</span>
+          </div>
+          <h3 class="edu-degree">Bachelor of Science in Information Technology (BSIT)</h3>
+          <p class="edu-school">University of the Immaculate Conception</p>
+          <p class="edu-desc">
+            Currently enrolled as a 1st-year student learning the core foundation of information and communications technology, computer operations, and introductory programming.
+          </p>
+          <div class="edu-subjects">
+            <strong>Key 1st Year Subjects:</strong>
+            <ul>
+              <li>Introduction to Computing</li>
+              <li>Computer Programming (Java / Logic Formulation)</li>
+              <li>Fundamentals of Information Technology</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="content-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <h2 class="section-title">Contact</h2>
+          <div class="accent-bar"></div>
+          <p class="section-desc">Feel free to connect with me for questions, class projects, or collaboration.</p>
+        </div>
+
+        <div class="contact-simple-box">
+          <div class="contact-simple-details">
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">&#9993;</span>
+              <div>
+                <strong>Email:</strong>
+                <a href="mailto:mlampano_260000000974@uic.edu.ph
+">mlampano_260000000974@uic.edu.ph</a>
+                <span class="note">Student Email</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">&#128187;</span>
+              <div>
+                <strong>GitHub:</strong>
+                <a href="https://github.com/markyysupermarkyy/lampano" target="_blank" rel="noopener noreferrer">github.com/markyysupermarkyy</a>
+                <span class="note">Github Account</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">&#128205;</span>
+              <div>
+                <strong>Location:</strong>
+                <span>[Davao City, Philippines]</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-action-area">
+            <p>Click below to test the quick notification alert:</p>
+            <button id="contact-action-btn" class="btn btn-primary">Get in Touch</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <!-- Dynamic Target 3: Year Injection -->
-    <p>&copy; <span id="year"></span> All Rights Reserved.</p>
+  <div id="bubble-alert" class="bubble-alert" role="status" aria-live="polite" aria-hidden="true">
+    <div class="bubble-icon-wrap" aria-hidden="true">&#9993;</div>
+    <div class="bubble-content">
+      <strong class="bubble-title">Thank you for reaching out!</strong>
+      <p class="bubble-message">You can reach me directly via email. Contact form coming soon!</p>
+    </div>
+    <button id="bubble-close-btn" class="bubble-close" aria-label="Dismiss notification">&times;</button>
+  </div>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <!-- Dynamic Target 3: Year Injection -->
+      <p>&copy; <span id="year"></span> Mark Allen T. Lampano. All Rights Reserved.</p>
+      <p class="footer-note">Built with basic HTML, CSS, and vanilla JavaScript.</p>
+    </div>
   </footer>
 
 </body>
