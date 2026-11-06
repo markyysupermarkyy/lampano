@@ -14,9 +14,6 @@
 </head>
 <body>
 
-  <!-- Accessible Skip Link -->
-  <a href="#main-content" class="skip-link">Skip to content</a>
-
   <!-- =========================================================
        HEADER & NAVIGATION
        ========================================================= -->
@@ -45,7 +42,7 @@
           <li><a href="#contact" class="nav-item">Contact</a></li>
         </ul>
 
-        <!-- Dynamic Target 1: Dark Mode Toggle -->
+        <!-- Dynamic Target 1: Dark Mode Toggle (Preserved from starter code) -->
         <button id="theme-btn" class="theme-toggle-btn" aria-label="Toggle dark mode theme">
           <span class="theme-icon" aria-hidden="true">&#9790;</span>
           <span class="theme-label">Dark Mode</span>
@@ -62,23 +59,41 @@
     <!-- HERO SECTION -->
     <section id="hero" class="hero-section">
       <div class="container hero-content">
-        <div class="hero-badge">
-          <span class="badge-tag yellow-tag">Freshman Portfolio</span>
-          <span class="badge-tag blue-tag">BS Information Technology</span>
+        <div class="hero-copy">
+          <div class="hero-badge">
+            <span class="badge-tag yellow-tag">First-Year Portfolio</span>
+            <span class="badge-tag blue-tag">BS Information Technology</span>
+          </div>
+
+          <h1 class="hero-title">Hi, I’m Mark Allen.</h1>
+          <p class="hero-subtitle">First-year Information Technology student</p>
+
+          <p class="hero-bio">
+            I’m building practical skills in computer hardware, operating systems, ICT troubleshooting, and introductory programming. I enjoy combining technical problem-solving with creativity as I explore web design and development.
+          </p>
+
+          <div class="hero-btn-group">
+            <a href="#projects" class="btn btn-primary">Featured Projects</a>
+            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            <a href="#skills" class="btn btn-outline">My Skills</a>
+          </div>
         </div>
 
-        <h1 class="hero-title">Welcome to My E-Portfolio</h1>
-        <p class="hero-subtitle">1st Year Information Technology Student</p>
-
-        <p class="hero-bio">
-          Hello! I am <strong>Mark Allen T. Lampano</strong>. I have foundational skills in basic programming (HTML, CSS, JavaScript, and Java) and a strong focus on technical computer operations, PC hardware assembly, operating systems, and core ICT troubleshooting. Additionally, as an artistic and creative individual, I am exploring the world of web design and development and bringing artistry to the Information Technology field.
-        </p>
-
-        <div class="hero-btn-group">
-          <a href="#projects" class="btn btn-primary">Featured Projects</a>
-          <!-- Dynamic Target 2: Interactive Contact Button -->
-          <button id="contact-btn" class="btn btn-secondary">Get in Touch</button>
-          <a href="#skills" class="btn btn-outline">My Skills</a>
+        <div class="hero-profile">
+          <div class="hero-portrait">
+            <!-- Save your photo as images/profile.jpg beside index.html. -->
+            <img class="portrait-image" src="images/profile.jpg" alt="Portrait of Mark Allen T. Lampano">
+            <div class="portrait-placeholder" role="img" aria-label="Photo placeholder. Add your picture as images/profile.jpg.">
+              <span class="portrait-initials" aria-hidden="true">ML</span>
+              <span class="portrait-label">picture of self</span>
+              <code>images/profile.jpg</code>
+            </div>
+          </div>
+          <a class="hero-github-link" href="https://github.com/markyysupermarkyy" target="_blank" rel="noopener noreferrer" aria-label="Visit Mark Allen T. Lampano on GitHub">
+            <svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path>
+            </svg>
+          </a>
         </div>
       </div>
     </section>
@@ -196,7 +211,7 @@
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS SECTION -->
+    <!-- FEATURED PROJECTS SECTION (Preserving starter code lab) -->
     <section id="projects" class="content-section">
       <div class="container">
         <div class="section-title-wrap">
@@ -309,7 +324,7 @@
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
+    <!-- CONTACT SECTION (Simple layout, no complex form, triggers modern bubble alert) -->
     <section id="contact" class="content-section">
       <div class="container">
         <div class="section-title-wrap">
@@ -350,6 +365,7 @@
 
           <div class="contact-action-area">
             <p>Click below to test the quick notification alert:</p>
+            <!-- Triggers the modern bubble alert notification in script.js -->
             <button id="contact-action-btn" class="btn btn-primary">Get in Touch</button>
           </div>
         </div>
@@ -358,6 +374,9 @@
 
   </main>
 
+  <!-- =========================================================
+       MODERN BUBBLE ALERT NOTIFICATION (Replaces browser alert)
+       ========================================================= -->
   <div id="bubble-alert" class="bubble-alert" role="status" aria-live="polite" aria-hidden="true">
     <div class="bubble-icon-wrap" aria-hidden="true">&#9993;</div>
     <div class="bubble-content">
@@ -368,7 +387,7 @@
   </div>
 
   <!-- =========================================================
-       FOOTER
+       FOOTER (Preserving starter code year injection)
        ========================================================= -->
   <footer class="site-footer">
     <div class="container footer-content">
