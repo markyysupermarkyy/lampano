@@ -1,24 +1,26 @@
-/* =========================================================
-   MARK ALLEN T. LAMPANO - IT STUDENT E-PORTFOLIO
-   Palette: Coordinated Yellow & Blue (Solid Colors - No Gradients)
-   Simple, clean, beginner-appropriate styling with modern UI
-   ========================================================= */
-
 /* ---------------------------------------------------------
    1. COLOR VARIABLES & THEME TOKENS (SOLID COLORS ONLY)
    --------------------------------------------------------- */
 :root {
   /* Blue Palette */
-  --blue-dark: #0f2744;         /* Deep Navy Blue */
-  --blue-primary: #1e3a8a;      /* Medium Navy Blue */
-  --blue-accent: #2563eb;       /* Royal Blue */
-  --blue-light: #ebf3fa;        /* Light Ice Blue */
+  --blue-dark: #0f2744;
+  /* Deep Navy Blue */
+  --blue-primary: #1e3a8a;
+  /* Medium Navy Blue */
+  --blue-accent: #2563eb;
+  /* Royal Blue */
+  --blue-light: #ebf3fa;
+  /* Light Ice Blue */
 
   /* Yellow Palette */
-  --yellow-primary: #f59e0b;    /* Warm Amber Gold */
-  --yellow-hover: #d97706;      /* Darker Gold */
-  --yellow-light: #fef3c7;      /* Pale Yellow */
-  --yellow-dark: #92400e;       /* Deep Yellow Text */
+  --yellow-primary: #f59e0b;
+  /* Warm Amber Gold */
+  --yellow-hover: #d97706;
+  /* Darker Gold */
+  --yellow-light: #fef3c7;
+  /* Pale Yellow */
+  --yellow-dark: #92400e;
+  /* Deep Yellow Text */
 
   /* Surface & Text (Light Mode) */
   --bg-body: #f8fafc;
