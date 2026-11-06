@@ -1,16 +1,3 @@
-/**
- * ==============================================================================
- * MARK ALLEN T. LAMPANO - IT STUDENT E-PORTFOLIO JAVASCRIPT
- * Features:
- *   1. Dynamic Year Injection
- *   2. Dark / Light Mode Switch (with localStorage)
- *   3. Mobile Navigation Menu Toggle
- *   4. Modern Bubble Alert Notification (Replacing the intrusive browser alert)
- *   5. Active Section Scroll Highlighting
- *   6. Native Smooth In-Page Navigation and Repeatable Section Animations
- * ==============================================================================
- */
-
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ----------------------------------------------------------------------------
