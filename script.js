@@ -1,3 +1,16 @@
+/**
+ * ==============================================================================
+ * MARK ALLEN T. LAMPANO - IT STUDENT E-PORTFOLIO JAVASCRIPT
+ * Features:
+ *   1. Dynamic Year Injection
+ *   2. Dark / Light Mode Switch (with localStorage)
+ *   3. Mobile Navigation Menu Toggle
+ *   4. Modern Bubble Alert Notification (Replacing the intrusive browser alert)
+ *   5. Active Section Scroll Highlighting
+ *   6. Native Smooth In-Page Navigation and Repeatable Section Animations
+ * ==============================================================================
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ----------------------------------------------------------------------------
@@ -5,64 +18,105 @@ document.addEventListener('DOMContentLoaded', () => {
    * ---------------------------------------------------------------------------- */
   const yearSpan = document.getElementById('year');
   const themeBtn = document.getElementById('theme-btn');
-  const contactBtn = document.getElementById('contact-btn');
   const contactActionBtn = document.getElementById('contact-action-btn');
 
   const menuToggle = document.getElementById('menu-toggle');
   const navContainer = document.querySelector('.nav-container');
   const navLinks = document.querySelectorAll('.nav-item');
   const sections = document.querySelectorAll('section[id]');
+  const heroPortrait = document.querySelector('.hero-portrait');
+  const portraitImage = document.querySelector('.portrait-image');
 
   const bubbleAlert = document.getElementById('bubble-alert');
   const bubbleCloseBtn = document.getElementById('bubble-close-btn');
 
+  if (heroPortrait && portraitImage) {
+    const showPortrait = () => heroPortrait.classList.add('has-image');
+    portraitImage.addEventListener('load', showPortrait);
+    portraitImage.addEventListener('error', () => heroPortrait.classList.remove('has-image'));
+
+    if (portraitImage.complete && portraitImage.naturalWidth > 0) {
+      showPortrait();
+    }
+  }
+
   let bubbleTimer = null;
   let scrollAnimationFrame = null;
+  const scrollDuration = 1000;
+
+  const cancelScrollAnimation = () => {
+    if (scrollAnimationFrame !== null) {
+      cancelAnimationFrame(scrollAnimationFrame);
+      scrollAnimationFrame = null;
+    }
+  };
+
+  window.addEventListener('wheel', cancelScrollAnimation, { passive: true });
+  window.addEventListener('touchstart', cancelScrollAnimation, { passive: true });
+  window.addEventListener('pointerdown', cancelScrollAnimation, { passive: true });
+  window.addEventListener('keydown', (event) => {
+    if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(event.key)) {
+      cancelScrollAnimation();
+    }
+  });
 
   document.addEventListener('click', (event) => {
     const link = event.target.closest('a[href^="#"]');
-    if (!link) return;
+    if (
+      !link
+      || event.button !== 0
+      || event.metaKey
+      || event.ctrlKey
+      || event.shiftKey
+      || event.altKey
+      || link.target
+      || link.hasAttribute('download')
+    ) return;
 
-    const target = document.getElementById(decodeURIComponent(link.hash.slice(1)));
+    let targetId;
+    try {
+      targetId = decodeURIComponent(link.hash.slice(1));
+    } catch {
+      return;
+    }
+
+    const target = document.getElementById(targetId);
     if (!target) return;
 
     event.preventDefault();
+    cancelScrollAnimation();
     history.pushState(null, '', link.hash);
 
-    if (scrollAnimationFrame !== null) {
-      cancelAnimationFrame(scrollAnimationFrame);
-    }
-
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const scrollElement = document.scrollingElement;
-    const targetMargin = Number.parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
     const startPosition = scrollElement.scrollTop;
+    const targetMargin = Number.parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
     const endPosition = Math.max(
       0,
       startPosition + target.getBoundingClientRect().top - targetMargin
     );
-    const distance = Math.abs(endPosition - startPosition);
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const duration = reduceMotion
-      ? Math.min(380, Math.max(240, distance * 0.25))
-      : Math.min(1100, Math.max(500, distance * 0.45));
     const startTime = performance.now();
 
-    const animateScroll = (currentTime) => {
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-      const easedProgress = progress < 0.5
-        ? 4 * progress ** 3
-        : 1 - ((-2 * progress + 2) ** 3) / 2;
+    if (reduceMotion) {
+      scrollElement.scrollTop = endPosition;
+    } else {
+      const animateScroll = (currentTime) => {
+        const progress = Math.min((currentTime - startTime) / scrollDuration, 1);
+        const easedProgress = progress < 0.5
+          ? 4 * progress ** 3
+          : 1 - ((-2 * progress + 2) ** 3) / 2;
 
-      scrollElement.scrollTop = startPosition + (endPosition - startPosition) * easedProgress;
+        scrollElement.scrollTop = startPosition + (endPosition - startPosition) * easedProgress;
 
-      if (progress < 1) {
-        scrollAnimationFrame = requestAnimationFrame(animateScroll);
-      } else {
-        scrollAnimationFrame = null;
-      }
-    };
+        if (progress < 1) {
+          scrollAnimationFrame = requestAnimationFrame(animateScroll);
+        } else {
+          scrollAnimationFrame = null;
+        }
+      };
 
-    scrollAnimationFrame = requestAnimationFrame(animateScroll);
+      scrollAnimationFrame = requestAnimationFrame(animateScroll);
+    }
 
     if (!target.matches('section[id]')) return;
 
@@ -181,16 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
       bubbleTimer = null;
     }
   };
-
-  // Attach click listener to the Hero Contact button
-  if (contactBtn) {
-    contactBtn.addEventListener('click', () => {
-      showBubbleAlert(
-        'Thank you for reaching out!',
-        'You can email me directly at mlampano_260000000974@uic.edu.ph — Contact form coming soon!'
-      );
-    });
-  }
 
   // Attach click listener to the Contact section action button
   if (contactActionBtn) {
